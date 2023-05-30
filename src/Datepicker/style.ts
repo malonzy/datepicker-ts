@@ -72,7 +72,8 @@ export const CalendarContainer = styled.div`
   background:#ffffff;
   padding: 16px;
   border-radius: 16px;
-  width: 446px;
+  max-width: 446px;
+  min-width: 300px;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.04);
   animation: openlist 0.2s ease-out;
   transform-origin:top;
