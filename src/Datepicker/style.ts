@@ -56,7 +56,7 @@ export const InputField = styled.div`
   button{
     width: 50px;
   }
-  
+
   input:focus, input:focus-visible {
     outline: none;
   }
@@ -72,8 +72,9 @@ export const CalendarContainer = styled.div`
   background:#ffffff;
   padding: 16px;
   border-radius: 16px;
-  max-width: 446px;
-  min-width: 300px;
+  /*max-width: 446px;
+  min-width: 300px;*/
+  width: 446px;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.04);
   animation: openlist 0.2s ease-out;
   transform-origin:top;
@@ -86,65 +87,94 @@ export const CalendarContainer = styled.div`
     }
   }
 }
-  .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.month-year{
+  width: 150px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+}
+.weekdays{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.weekday{
+  flex: 1 1 0;
+  text-align: center;
+  font-weight: bold;
+}
+.calendar-day{
+  text-align: center;
+  cursor:pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  &:hover{
+    background: ${theme.colors["neutral-50"]};
   }
-  .month-year{
-    width: 150px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
+}
+.previous-month-day,.next-month-day{
+  color: ${theme.colors["neutral-200"]};
+  cursor: default;
+  &:hover{
+    background: none;
   }
-  button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
+}
+.days{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+}
+.selected-day,.selected-day:hover,.selected-year,.selected-year:hover{
+  background: ${theme.colors["neutral-900"]} !important;
+  color: #ffffff;
+}
+.current-day{
+  font-weight: bold;
+}
+
+//year selector
+.year-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 16px;
+}
+
+.year-option {
+  text-align: center;
+  border-radius: 50px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: ${theme.colors["neutral-50"]};
   }
-  .weekdays{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
+}
+
+.month-year {
+  cursor:pointer;
+  border-radius: 50px;
+  padding: 4px 0;
+  &:hover {
+    background: ${theme.colors["neutral-50"]};
   }
-  .weekday{
-    flex: 1 1 0;
-    text-align: center;
-    font-weight: bold;
-  }
-  .calendar-day{
-    text-align: center;
-    cursor:pointer;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    &:hover{
-      background: ${theme.colors["neutral-50"]};
-    }
-  }
-  .previous-month-day,.next-month-day{
-    color: ${theme.colors["neutral-200"]};
-    cursor: default;
-    &:hover{
-      background: none;
-    }
-  }
-  .days{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 16px;
-  }
-  .selected-day,.selected-day:hover{
-    background: ${theme.colors["neutral-900"]};
-    color: #ffffff;
-  }
-  .current-day{
-    font-weight: bold;
-  }
+}
 `
